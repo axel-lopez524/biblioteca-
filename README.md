@@ -32,14 +32,25 @@ colocan su contenido en `{% block content %}`. El contenido se organiza mediante
 
 ## Instalación y ejecución
 
-Desde la carpeta del proyecto, instala la dependencia y ejecuta el servidor:
+Desde la carpeta del proyecto, crea y activa el entorno virtual e instala las
+dependencias:
 
 ```powershell
-python -m pip install -r requirements.txt
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r .\requirements.txt
 python server.py
 ```
 
-Abre <http://127.0.0.1:5050/> en el navegador. Puedes navegar por las demás
+Si PowerShell bloquea la activación de scripts, ejecuta la aplicación con el
+intérprete del entorno virtual:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r .\requirements.txt
+.\.venv\Scripts\python.exe .\server.py
+```
+
+Abre <http://127.0.0.1:5050/> en el navegador. Puedes navegar a las demás
 páginas usando el menú o visitando `/catalogo`, `/servicios` y `/contacto`.
 
 ## URL de GitHub
